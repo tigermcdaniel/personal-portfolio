@@ -11,7 +11,7 @@ const LinkedInIcon = ({ className }: { className?: string }) => (
 )
 
 const socials = [
-  { icon: GitHubIcon, href: "https://github.com/tiger-mcdaniel", label: "GitHub" },
+  { icon: GitHubIcon, href: "https://github.com/tigermcdaniel", label: "GitHub" },
   { icon: LinkedInIcon, href: "https://linkedin.com/in/tiger-mcdaniel", label: "LinkedIn" },
 ]
 
