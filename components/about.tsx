@@ -56,7 +56,7 @@ export function About() {
                 fill
                 className="object-cover transition-all duration-300"
               />
-              <div className="absolute inset-0 bg-white/10 hover:bg-transparent transition-colors duration-300" />
+              <div className="absolute inset-0 hidden bg-white/10 hover:bg-transparent transition-colors duration-300 md:block" />
             </div>
             <div className="absolute top-4 left-4 w-64 h-64 rounded border-2 border-primary -z-10 group-hover:top-3 group-hover:left-3 transition-all duration-300" />
           </div>

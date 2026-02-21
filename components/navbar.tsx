@@ -34,7 +34,7 @@ export function Navbar() {
           href="#"
           className="text-xl font-bold text-primary font-mono tracking-tight hover:opacity-80 transition-opacity"
         >
-          G
+          T
         </a>
 
         {/* Desktop Nav */}

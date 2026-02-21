@@ -14,8 +14,8 @@ const firaCode = Fira_Code({
 })
 
 export const metadata: Metadata = {
-  title: 'Gazi Jarin',
-  description: 'Software Engineer and Artist based in New York City',
+  title: 'Tiger McDaniel',
+  description: 'Software Engineer based in Seattle',
 }
 
 export default function RootLayout({

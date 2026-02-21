@@ -4,39 +4,30 @@ import { useState } from "react"
 
 const experiences = [
   {
-    company: "Google",
-    title: "Software Engineer",
-    period: "JAN 2025 - PRESENT",
-    bullets: [
-      "Built and launched large-scale machine learning-driven conversion autobidding models at Google scale, influencing bidding decisions across millions of advertisers and users",
-      "Led end-to-end model development (data, training, evaluation, and production launch) for Proxybidder ML systems, directly driving multi-million-dollar revenue impact through improved conversion efficiency",
-    ],
-  },
-  {
-    company: "Pinterest",
-    title: "Software Engineer",
-    period: "JUN 2023 - DEC 2024",
-    bullets: [
-      "Developed and optimized recommendation algorithms powering content discovery for 400M+ monthly active users",
-      "Built data pipelines processing billions of user interactions to improve personalization and engagement metrics",
-    ],
-  },
-  {
     company: "Amazon",
-    title: "Software Development Engineer",
-    period: "MAY 2022 - MAY 2023",
+    title: "Software Engineer",
+    period: "JAN 2024 - PRESENT",
     bullets: [
-      "Designed and implemented microservices for Amazon's e-commerce platform handling millions of daily transactions",
-      "Collaborated with cross-functional teams to ship features that improved customer checkout experience and reduced cart abandonment",
+      "As an SDE in Amazon’s Prime Finance org, I lead the design, development, and maintenance of scalable full-stack applications.",
+      "I collaborate closely with scientists to build and operationalize ML models, while optimizing automation pipelines that drive data-informed financial decisions.",
     ],
   },
   {
-    company: "Wattpad",
-    title: "Software Engineer Intern",
-    period: "JAN 2021 - AUG 2021",
+    company: "NASA JPL - Senior Capstone",
+    title: "Project Lead / Software Engineer",
+    period: "JAN 2022 - MAY 2023",
     bullets: [
-      "Built full-stack features for a storytelling platform with 90M+ users, improving reader engagement and content discovery",
-      "Developed REST APIs and React components to support new social features for the community platform",
+      "As Project Manager and Software Engineer, I led the full-stack development of a high-fidelity 3D spacecraft simulation for NASA’s Jet Propulsion Laboratory (JPL) during a year-long senior capstone. ",
+      "Working closely with a team of six, we delivered a robust simulation tool that supported ongoing research at NASA JPL.",
+    ],
+  },
+  {
+    company: "Amazon - Internship",
+    title: "Software Engineer Intern ",
+    period: "MAY 2022 - AUGUST 2022",
+    bullets: [
+      "As an SDE Intern on the Amazon Robotics Scout Simulation team, I worked on C++delopment to enhance 3D visualization software supporting autonomous delivery systems.",
+      "My contributions improved simulation capabilities critical to real-world testing and deployment of Amazon’s robotic technologies.",
     ],
   },
 ]

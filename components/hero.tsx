@@ -1,11 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import JelloHead from "@/lib/jello"
 
 export function Hero() {
   const [text, setText] = useState("")
   const fullText = "hi, i'm tiger"
   const [showCursor, setShowCursor] = useState(true)
+  const [showDotArt, setShowDotArt] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine)")
+    setShowDotArt(mq.matches)
+    const handler = () => setShowDotArt(mq.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [])
 
   useEffect(() => {
     let i = 0
@@ -28,8 +38,9 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="flex min-h-screen items-center px-6 lg:px-12">
-      <div className="mx-auto w-full max-w-4xl">
+    <section className="flex min-h-screen flex-col items-center justify-center px-6 pt-20 pb-12 lg:flex-row lg:items-center lg:px-12 lg:pt-0 lg:pb-0">
+      {/* Text first in DOM so it paints immediately; order-2 keeps it on the right visually when dot art is shown */}
+      <div className="mx-auto w-full max-w-4xl flex-1 lg:order-2">
         <h1 className="mb-2 text-5xl font-bold text-foreground sm:text-6xl lg:text-7xl opacity-0 animate-fade-in-up delay-200 text-balance">
           {text}
           <span
@@ -42,7 +53,7 @@ export function Hero() {
           I build systems at scale.
         </h2>
         <p className="mb-10 max-w-xl text-muted-foreground leading-relaxed opacity-0 animate-fade-in-up delay-400">
-          {"I'm a software engineer based in Seattle. I'm fascinated by large-scale, complex systems in AI and ML deveopment that drives industry leading products and research."}
+          {"I’m a software engineer based in Seattle, deeply interested in LLM–user interaction and in building large-scale AI and ML systems that shape how people engage with intelligent products."}
         </p>
         <div className="opacity-0 animate-fade-in-up delay-500">
           <a
@@ -53,6 +64,11 @@ export function Hero() {
           </a>
         </div>
       </div>
+      {showDotArt && (
+        <div className="order-1 shrink-0 hidden lg:block">
+          <JelloHead />
+        </div>
+      )}
     </section>
   )
 }
