@@ -25,7 +25,6 @@ const featuredProjects = [
     tech: "Instagram API, V0, Vercel, Supabase",
     image: "/images/project-social-media-analyst.jpg",
     github: "https://github.com/tigermcdaniel/ai-social-strategist",
-    external: "#",
   },
   {
     title: "chat ui",
@@ -69,6 +68,7 @@ function FeaturedProject({
 }) {
   const isEven = index % 2 === 0
   const hasVideo = "video" in project && project.video
+  const hasExternal = "external" in project && project.external
 
   const contentCol = isEven ? "md:col-start-7 md:col-span-6 md:text-right" : "md:col-start-1 md:col-span-6 md:text-left"
   const mediaCol = isEven ? "md:col-start-1 md:col-span-7" : "md:col-start-6 md:col-span-7"
@@ -92,38 +92,72 @@ function FeaturedProject({
 
       {/* 3. Asset — mobile third; desktop media column spanning rows 1–3 */}
       <div className={`relative order-3 md:row-start-1 md:row-end-4 ${mediaCol}`}>
-        <a href={project.external} className="block relative group">
-          <div className="relative aspect-video rounded overflow-hidden">
-            {hasVideo ? (
-              <>
-                <img
+        {hasExternal ? (
+          <a href={project.external} className="block relative group">
+            <div className="relative aspect-video rounded overflow-hidden">
+              {hasVideo ? (
+                <>
+                  <img
+                    src={project.image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                    aria-hidden
+                  />
+                  <video
+                    src={project.video}
+                    poster={project.image}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    playsInline
+                    loop
+                    muted
+                    autoPlay
+                    aria-label={project.title}
+                  />
+                </>
+              ) : (
+                <Image
                   src={project.image}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover"
-                  aria-hidden
+                  alt={project.title}
+                  fill
+                  className="object-cover"
                 />
-                <video
-                  src={project.video}
-                  poster={project.image}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  playsInline
-                  loop
-                  muted
-                  autoPlay
-                  aria-label={project.title}
+              )}
+              <div className="absolute inset-0 hidden bg-primary/20 group-hover:bg-transparent transition-colors duration-300 md:block" />
+            </div>
+          </a>
+        ) : (
+          <div className="block relative group">
+            <div className="relative aspect-video rounded overflow-hidden">
+              {hasVideo ? (
+                <>
+                  <img
+                    src={project.image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                    aria-hidden
+                  />
+                  <video
+                    src={project.video}
+                    poster={project.image}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    playsInline
+                    loop
+                    muted
+                    autoPlay
+                    aria-label={project.title}
+                  />
+                </>
+              ) : (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
                 />
-              </>
-            ) : (
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
-            )}
-            <div className="absolute inset-0 hidden bg-primary/20 group-hover:bg-transparent transition-colors duration-300 md:block" />
+              )}
+            </div>
           </div>
-        </a>
+        )}
       </div>
 
       {/* 4. Tech + links — mobile fourth; desktop row 3 in content column */}
@@ -139,13 +173,15 @@ function FeaturedProject({
           >
             <GitHubIcon className="h-5 w-5" />
           </a>
-          <a
-            href={project.external}
-            className="text-foreground hover:text-primary transition-colors"
-            aria-label="External link"
-          >
-            <ExternalLink className="h-5 w-5" />
-          </a>
+          {hasExternal && (
+            <a
+              href={project.external}
+              className="text-foreground hover:text-primary transition-colors"
+              aria-label="External link"
+            >
+              <ExternalLink className="h-5 w-5" />
+            </a>
+          )}
         </div>
       </div>
     </div>

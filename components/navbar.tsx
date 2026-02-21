@@ -50,7 +50,8 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="mailto:hello@gazijarin.com"
+            href="/TigerMcdanielResume.pdf"
+            download="TigerMcdanielResume.pdf"
             className="rounded border border-primary px-4 py-2 font-mono text-sm text-primary hover:bg-primary/10 transition-colors"
           >
             Resume
@@ -96,7 +97,8 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="mailto:hello@gazijarin.com"
+                href="/TigerMcdanielResume.pdf"
+                download="TigerMcdanielResume.pdf"
                 className="rounded border border-primary px-6 py-3 font-mono text-primary hover:bg-primary/10 transition-colors"
               >
                 Resume

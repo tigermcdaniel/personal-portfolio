@@ -43,7 +43,7 @@ export function About() {
               ))}
             </ul>
             <p>
-              {"Outside of work, I'm nerdy about making my own custom AI tools, love literary fiction, and a bit of a health nut. Oh, I make content too."}
+              {"Outside of work, I build custom AI tools for fun, read literary fiction, and care a lot about health and fitness."}
             </p>
           </div>
 

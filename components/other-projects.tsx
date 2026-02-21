@@ -5,48 +5,41 @@ import { Folder, Github, ExternalLink } from "lucide-react"
 
 const otherProjects = [
   {
-    title: "TDSB Homework Management Interface",
+    title: "AI Fitness Tracker",
     description:
-      "An application created for Toronto District School Board, with a Flask back-end and a Vue front-end.",
-    tech: "Python (Flask), Vue.js, Bootstrap, SQL",
-    github: "#",
-    external: "#",
+      "An application with AI integration that allowes the user to track their fitness goals and progress.",
+    tech: "TypeScript, Vercel, V0",
+    github: "https://github.com/tigermcdaniel/fitness-tracker-with-ai",
+    external: "https://v0-fitness-tracker-with-ai.vercel.app/"
   },
   {
-    title: "Adam A.I.",
+    title: "Dynamic Frontend Creation",
     description:
-      "A self-learning A.I. that learns to traverse through a complex maze using the genetic algorithm.",
-    tech: "Javascript, HTML / CSS",
-    github: "#",
-    external: "#",
+      "An application that dynamically creates frontend components based on user input using AI integrations.",
+    tech: "React, V0 API, Dynamic Rendering",
+    github: "https://github.com/tigermcdaniel/auto-frontend-chat-ls",
+    external: "https://v0-clone-chat-gpt-fawn.vercel.app/",
   },
   {
-    title: "Distributed Logging and Monitoring System",
+    title: "Sky Hopper Planner",
     description:
-      "A system that establishes an ORM connection to a Prisma client in order to communicate logs from microservices.",
-    tech: "Node.js (Express.js), React.js, PostgreSQL",
-    github: "#",
+      "A chat interface with AI integration that assists the user in planning their next flight with user friendly custom UI components.",
+    tech: "Loveable",
+    github: "https://github.com/tigermcdaniel/sky-hopper-planner?tab=readme-ov-file",
   },
   {
-    title: "Odin Bot",
+    title: "Dynamic Post Generator",
     description:
-      "A Telegram bot that helps you excel on your daily tasks through Node NLP.",
-    tech: "Javascript, Node.js, Natural NLP, Telegram API",
-    github: "#",
+      "A simple script that takes in a prompt and base images to generate an informative post for a given social media platform.",
+    tech: "Javascript, ChatGTP API",
+    github: "https://github.com/tigermcdaniel/postGenerator",
   },
   {
-    title: "Game Centre",
+    title: "Watt2Buy",
     description:
-      "An Android app consisting of three board games, including multiplayer, autosave, user authentication, etc.",
-    tech: "Java, Android Studio",
-    github: "#",
-  },
-  {
-    title: "Minimax Stonehenge",
-    description:
-      "Two-player, zero-sum game with a strategic Minimax artificial intelligence.",
-    tech: "Python",
-    github: "#",
+      "A simple web application that assists the user to find a product to purchase based on the cost of a given appliance and its wattage usage.",
+    tech: "HTML, CSS, Javascript",
+    github: "https://github.com/tigermcdaniel/Watt2Buy",
   },
 ]
 
