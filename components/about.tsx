@@ -4,9 +4,9 @@ const technologies = [
   "Python",
   "Typescript",
   "React.js",
-  "Java",
-  "Javascript ES6+",
-  "C#",
+  "Apache Airflow",
+  "Spark",
+  "AWS Services",
 ]
 
 export function About() {
@@ -21,24 +21,17 @@ export function About() {
             <p>
               I am currently a <span className="text-foreground font-semibold">Software Engineer</span> at{" "}
               <a href="#" className="text-primary hover:underline">
-                Google
+                Amazon
               </a>
-              , where I help build autobidder models that make Google Search money.
-              Previously, I was at{" "}
+              , where I take machine learning models from prototype to production.
+              Previously, I completed my internship also at{" "}
               <a href="#" className="text-primary hover:underline">
                 Amazon
               </a>{" "}
-              and{" "}
+              and a Senior Capstone at{" "}
               <a href="#" className="text-primary hover:underline">
-                Pinterest.
+                NASA JPL.
               </a>{" "}
-              At the same time, I am undertaking a part-time{" "}
-              <span className="text-foreground font-semibold">{"Master's of Science"}</span> in{" "}
-              <span className="text-foreground font-semibold">Software Engineering</span> at{" "}
-              <a href="#" className="text-primary hover:underline">
-                University of Oxford
-              </a>
-              .
             </p>
             <p>Here are some technologies I have been working with:</p>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 font-mono text-sm">
@@ -50,7 +43,7 @@ export function About() {
               ))}
             </ul>
             <p>
-              {"Outside of work, I'm nerdy about tech gadgets, love literary fiction, and play way too many battle royale games. Oh, I make content too."}
+              {"Outside of work, I'm nerdy about making my own custom AI tools, love literary fiction, and a bit of a health nut. Oh, I make content too."}
             </p>
           </div>
 
@@ -58,12 +51,12 @@ export function About() {
           <div className="relative group mx-auto md:mx-0">
             <div className="relative w-64 h-64 rounded overflow-hidden">
               <Image
-                src="/images/profile.jpg"
-                alt="Gazi Jarin"
+                src="/images/profile.jpeg"
+                alt="Tiger McDaniel"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-cover transition-all duration-300"
               />
-              <div className="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-300" />
+              <div className="absolute inset-0 bg-white/10 hover:bg-transparent transition-colors duration-300" />
             </div>
             <div className="absolute top-4 left-4 w-64 h-64 rounded border-2 border-primary -z-10 group-hover:top-3 group-hover:left-3 transition-all duration-300" />
           </div>
