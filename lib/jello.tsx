@@ -1,11 +1,18 @@
 "use client"
 
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 type Point = { x: number; y: number; ox: number; oy: number; vx: number; vy: number };
 
 export default function JelloHead(): React.ReactElement {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { resolvedTheme } = useTheme();
+  const dotColorRef = useRef<string>("white");
+
+  useEffect(() => {
+    dotColorRef.current = resolvedTheme === "light" ? "#0a0a0a" : "#ffffff";
+  }, [resolvedTheme]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -116,10 +123,6 @@ export default function JelloHead(): React.ReactElement {
         pts.push({ x: px, y: py - dropOffset, ox: px, oy: py, vx: 0, vy: 0 });
       }
 
-      if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-        console.log("JelloHead: image", img.width, "x", img.height, "→", w, "x", h, "→", pts.length, "dots");
-      }
-
       let last = performance.now();
       const loadTime = performance.now();
       const introDuration = 2.4;
@@ -173,7 +176,7 @@ export default function JelloHead(): React.ReactElement {
           ctx.moveTo(p.x + 1.5, p.y);
           ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
         }
-        ctx.fillStyle = "white";
+        ctx.fillStyle = dotColorRef.current;
         ctx.fill();
 
         requestAnimationFrame(animate);
@@ -183,7 +186,7 @@ export default function JelloHead(): React.ReactElement {
     };
 
     img.onerror = () => {
-      console.error("JelloHead: failed to load /images/profile-dot-art.png");
+      console.error("JelloHead: failed to load /images/file-dot-art.png");
     };
   }, []);
 
