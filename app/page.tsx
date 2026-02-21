@@ -6,6 +6,7 @@ import { Projects } from "@/components/projects"
 import { OtherProjects } from "@/components/other-projects"
 import { SocialSidebar } from "@/components/social-sidebar"
 import { Footer } from "@/components/footer"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 export default function Home() {
   return (
@@ -14,10 +15,18 @@ export default function Home() {
       <SocialSidebar />
       <main className="mx-auto max-w-6xl">
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <OtherProjects />
+        <ScrollReveal>
+          <About />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Experience />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Projects />
+        </ScrollReveal>
+        <ScrollReveal>
+          <OtherProjects />
+        </ScrollReveal>
       </main>
       <Footer />
     </>
