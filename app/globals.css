@@ -2,6 +2,8 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant pink (&:is(.pink *));
+@custom-variant light (&:is(.light *));
 
 :root {
   --background: #ffffff;
@@ -28,6 +30,31 @@
   --scrollbar-thumb: #d4d4d8;
 }
 
+/* Explicit theme classes: right-hand dots set theme → next-themes sets html class → these apply. Same for jello dot color via resolvedTheme. */
+.light {
+  --background: #ffffff;
+  --foreground: #18181b;
+  --card: #f4f4f5;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #64ffda;
+  --accent-foreground: #18181b;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #18181b;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #64ffda;
+  --scrollbar-track: #f4f4f5;
+  --scrollbar-thumb: #d4d4d8;
+}
+
 .dark {
   --background: #000000;
   --foreground: #e4e4e7;
@@ -50,6 +77,44 @@
   --ring: #64ffda;
   --scrollbar-track: #000000;
   --scrollbar-thumb: #262626;
+}
+
+.pink {
+  --background: #ffd1dc;
+  --foreground: #831843;
+  --card: #ffdde4;
+  --card-foreground: #831843;
+  --popover: #ffd1dc;
+  --popover-foreground: #831843;
+  --primary: #be185d;
+  --primary-foreground: #fdf2f8;
+  --secondary: #ffdde4;
+  --secondary-foreground: #831843;
+  --muted: #ffdde4;
+  --muted-foreground: #9d174d;
+  --accent: #ec4899;
+  --accent-foreground: #831843;
+  --destructive: #e11d48;
+  --destructive-foreground: #fdf2f8;
+  --border: #f9a8d4;
+  --input: #f9a8d4;
+  --ring: #ec4899;
+  --scrollbar-track: #ffdde4;
+  --scrollbar-thumb: #f9a8d4;
+}
+
+/* Whole page background: explicit colors so theme switch from pink to light/dark always updates */
+html.light,
+html.light body {
+  background-color: #ffffff !important;
+}
+html.dark,
+html.dark body {
+  background-color: #000000 !important;
+}
+html.pink,
+html.pink body {
+  background-color: #ffd1dc !important;
 }
 
 @theme inline {

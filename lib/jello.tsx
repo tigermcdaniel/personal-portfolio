@@ -11,7 +11,12 @@ export default function JelloHead(): React.ReactElement {
   const dotColorRef = useRef<string>("white");
 
   useEffect(() => {
-    dotColorRef.current = resolvedTheme === "light" ? "#0a0a0a" : "#ffffff";
+    dotColorRef.current =
+      resolvedTheme === "light"
+        ? "#0a0a0a"
+        : resolvedTheme === "pink"
+          ? "#be185d"
+          : "#ffffff";
   }, [resolvedTheme]);
 
   useEffect(() => {

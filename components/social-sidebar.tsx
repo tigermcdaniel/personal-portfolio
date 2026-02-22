@@ -23,7 +23,7 @@ const socials = [
 export function SocialSidebar() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [effectiveTheme, setEffectiveTheme] = useState<'light' | 'dark'>('dark')
+  const [effectiveTheme, setEffectiveTheme] = useState<'light' | 'dark' | 'pink'>('dark')
 
   useEffect(() => {
     setMounted(true)
@@ -31,7 +31,7 @@ export function SocialSidebar() {
 
   useEffect(() => {
     if (!mounted || theme === undefined) return
-    setEffectiveTheme(theme === 'light' ? 'light' : 'dark')
+    setEffectiveTheme(theme === 'light' ? 'light' : theme === 'pink' ? 'pink' : 'dark')
   }, [mounted, theme])
 
   return (
@@ -56,12 +56,12 @@ export function SocialSidebar() {
       {/* Right - Email + theme dots */}
       <div className="fixed bottom-0 right-6 z-40 hidden md:flex flex-col items-center gap-5 lg:right-10">
         <div className="flex flex-col items-center gap-1.5">
-          {/* Theme selection dots: black = light theme, white = dark theme */}
+          {/* Theme selection dots: white = light, black = dark, pink = pink */}
           <div className="flex flex-col gap-1.5" role="group" aria-label="Theme">
             <button
               type="button"
               onClick={() => setTheme('light')}
-              className={`h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-white dark:bg-neutral-500 ring-neutral-600 dark:ring-white
+              className={`h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-white dark:bg-neutral-500 pink:bg-white ring-neutral-600 dark:ring-white pink:ring-pink-300
                 ${effectiveTheme === 'light' ? 'scale-125' : ''}`}
               aria-label="Light theme"
               aria-pressed={effectiveTheme === 'light'}
@@ -70,11 +70,20 @@ export function SocialSidebar() {
             <button
               type="button"
               onClick={() => setTheme('dark')}
-              className={`h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-neutral-600 dark:bg-white ring-neutral-700 dark:ring-black
+              className={`h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-neutral-600 dark:bg-white pink:bg-neutral-500 ring-neutral-700 dark:ring-black pink:ring-pink-300
                 ${effectiveTheme === 'dark' ? 'scale-125' : ''}`}
               aria-label="Dark theme"
               aria-pressed={effectiveTheme === 'dark'}
               title="Dark theme"
+            />
+            <button
+              type="button"
+              onClick={() => setTheme('pink')}
+              className={`h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-background transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-pink-500 dark:bg-pink-500 ring-pink-300 dark:ring-pink-300
+                ${effectiveTheme === 'pink' ? 'scale-125' : ''}`}
+              aria-label="Pink theme"
+              aria-pressed={effectiveTheme === 'pink'}
+              title="Pink theme"
             />
           </div>
           <a
