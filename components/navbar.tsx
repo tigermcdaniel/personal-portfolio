@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { ThemeDots } from "@/components/theme-dots"
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -29,13 +30,18 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-12">
-        {/* Logo */}
-        <a
-          href="#"
-          className="text-xl font-bold text-primary font-mono tracking-tight hover:opacity-80 transition-opacity"
-        >
-          T
-        </a>
+        {/* Left: theme dots (mobile) + logo */}
+        <div className="flex items-center gap-3">
+          <div className="flex md:hidden" aria-label="Theme">
+            <ThemeDots layout="horizontal" />
+          </div>
+          <a
+            href="#"
+            className="text-xl font-bold text-primary font-mono tracking-tight hover:opacity-80 transition-opacity"
+          >
+            T
+          </a>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
